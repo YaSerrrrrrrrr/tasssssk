@@ -16,13 +16,13 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      style: const TextStyle(color: Colors.white), // Ensure text is white
+      style: const TextStyle(color: Colors.white), 
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: const TextStyle(color: Colors.grey), // Label text color
+        labelStyle: const TextStyle(color: Colors.grey),
         border: OutlineInputBorder(),
       ),
-      validator: validator, // Add validation logic
+      validator: validator, 
     );
   }
 }

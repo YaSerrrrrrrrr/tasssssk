@@ -1,7 +1,7 @@
 import 'package:fashion/components/custom_appbar.dart';
 import 'package:fashion/components/custom_text.dart';
 import 'package:fashion/components/header.dart';
-import 'package:fashion/core/colors.dart';
+import 'package:fashion/Color/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

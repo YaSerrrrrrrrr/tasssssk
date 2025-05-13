@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import '../components/custom_appbar.dart';
-import '../core/colors.dart';
+import '../Color/colors.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -106,15 +106,17 @@ class Home extends StatelessWidget {
                             itemCount: CoverModel.covers.length,
                             itemBuilder: (context , index){
                               final item = CoverModel.covers[index];
-                              return Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Image.asset(item.image,height: 350,fit: BoxFit.cover),
-                                    Gap(10),
-                                    CustomText(text: item.name.toUpperCase(),),
-                                  ],
+                              return GestureDetector(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Image.asset(item.image,height: 350,fit: BoxFit.cover),
+                                      Gap(10),
+                                      CustomText(text: item.name.toUpperCase(),),
+                                    ],
+                                  ),
                                 ),
                               );
 

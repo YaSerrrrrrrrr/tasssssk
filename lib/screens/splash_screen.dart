@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fashion/core/colors.dart';
+import 'package:fashion/Color/colors.dart';
 import 'package:fashion/screens/onboarding_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

@@ -1,38 +1,16 @@
 import 'package:fashion/components/custom_appbar.dart';
 import 'package:fashion/components/custom_button.dart';
+import 'package:fashion/components/custom_text.dart';
+import 'package:fashion/components/custom_text_field.dart';
 import 'package:fashion/components/header.dart';
-import 'package:fashion/core/colors.dart';
+import 'package:fashion/Color/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'login.dart';
 import 'package:fashion/utils/shared_preferences_helper.dart';
 
-class CustomTextField extends StatelessWidget {
-  final String label;
-  final TextEditingController controller;
-  final String? Function(String?)? validator;
 
-  const CustomTextField({
-    Key? key,
-    required this.label,
-    required this.controller,
-    this.validator,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      style: const TextStyle(color: Colors.white), // Ensure text is white
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: const TextStyle(color: Colors.grey), // Label text color
-        border: OutlineInputBorder(),
-      ),
-      validator: validator,
-    );
-  }
-}
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
@@ -113,7 +91,7 @@ class _RegistrationState extends State<Registration> {
                       if (value == null || value.isEmpty) {
                         return 'Email is required';
                       }
-                      if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                      if (!value.contains('@')) {
                         return 'Enter a valid email';
                       }
                       return null;
@@ -155,11 +133,24 @@ class _RegistrationState extends State<Registration> {
                       if (value == null || value.isEmpty) {
                         return 'Phone number is required';
                       }
-                      if (!RegExp(r'^\d+$').hasMatch(value)) {
-                        return 'Enter a valid phone number';
+                      if (value.length < 5) {
+                        return 'Enter a valid phone number > 5 numbers';
+                      }
+                      if (!RegExp(r'\d').hasMatch(value)) {
+                        return 'Enter a valid phone number ';
                       }
                       return null;
                     },
+                  ),
+                  Gap(50),
+                  Container(
+                    color: Colors.black26,
+                    child: TextButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => const Login(),
+                      ));
+                    },
+                     child: CustomText(text: "you have an account? Login",color: Colors.white,)),
                   ),
                 ],
               ),

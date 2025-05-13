@@ -2,7 +2,7 @@ import 'package:fashion/components/cart_widget.dart';
 import 'package:fashion/components/custom_appbar.dart';
 import 'package:fashion/components/custom_button.dart';
 import 'package:fashion/components/header.dart';
-import 'package:fashion/core/colors.dart';
+import 'package:fashion/Color/colors.dart';
 import 'package:fashion/screens/place_order.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';

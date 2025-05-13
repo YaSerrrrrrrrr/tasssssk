@@ -1,5 +1,5 @@
 import 'package:fashion/components/custom_text.dart';
-import 'package:fashion/core/colors.dart';
+import 'package:fashion/Color/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';

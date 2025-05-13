@@ -1,8 +1,12 @@
 import 'package:fashion/components/custom_button.dart';
-import 'package:fashion/core/colors.dart';
+import 'package:fashion/Color/colors.dart';
+import 'package:fashion/components/custom_text_field.dart';
+import 'package:fashion/components/header.dart';
 import 'package:flutter/material.dart';
 import 'package:fashion/utils/shared_preferences_helper.dart';
+import 'package:gap/gap.dart';
 import 'homepage.dart';
+import 'package:fashion/components/custom_appbar.dart';
 
 
 class Login extends StatefulWidget {
@@ -27,6 +31,9 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppbar(
+        
+      ),
       backgroundColor: AppColors.primary,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -35,6 +42,9 @@ class _LoginState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Gap(50),
+              Header(name: "Login"),
+              Gap(100),
               CustomTextField(
                 label: 'Email',
                 controller: emailController,
@@ -63,6 +73,7 @@ class _LoginState extends State<Login> {
                   }
                 },
               ),
+            Spacer(),
             ],
           ),
         ),
@@ -71,26 +82,3 @@ class _LoginState extends State<Login> {
   }
 }
 
-class CustomTextField extends StatelessWidget {
-  final String label;
-  final TextEditingController controller;
-
-  const CustomTextField({
-    Key? key,
-    required this.label,
-    required this.controller,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      style: const TextStyle(color: Colors.white), // Ensure text is white
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: const TextStyle(color: Colors.grey), // Label text color
-        border: OutlineInputBorder(),
-      ),
-    );
-  }
-}
